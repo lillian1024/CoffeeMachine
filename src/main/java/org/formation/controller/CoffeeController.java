@@ -26,7 +26,7 @@ public class CoffeeController
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<CoffeeDto> coffee(Long id)
+    public ResponseEntity<CoffeeDto> coffee(@PathVariable Long id)
     {
         return service.oneCoffee(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
